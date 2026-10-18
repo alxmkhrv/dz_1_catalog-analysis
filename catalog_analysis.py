@@ -65,6 +65,35 @@ def decade_label(year):
             return "старые"
 
 
+def movies_genre(movies):
+    for movie in movies:
+        if "comedy" in movie["genres"]:
+            continue
+        print (movie["title"])
+
+def first_movie_rating_9(movies):
+    i = 0
+    while i < len(movies):
+        movie = movies[i]
+        if movie["rating"] > 9.0:
+            print(movie["title"])
+            break
+        i += 1
+    else:
+        print("Шедевров не найдено")
+
+def count_long_movies(movies, threshold=120):
+    counting = 0
+    for movie in movies:
+        if movie["duration_min"] > threshold:
+            counting += 1
+    return counting
+        
+
+
+
+
+
 
 
 
