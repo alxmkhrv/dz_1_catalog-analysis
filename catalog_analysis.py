@@ -149,6 +149,21 @@ def rating_over_average(movies):
         if movie["rating"] > average
     }
 
+def all_genres(movies):
+    genres_set = set()
+    for movie in movies:
+        genres_set.update(movie["genres"])
+    return genres_set
+
+def common_actors(movie1, movie2):
+    actors_1 = set(movie1["actors"])
+    actors_2 = set(movie2["actors"])
+    return actors_1 & actors_2
+
+def genres_only_in_one(movies_a, movies_b):
+    genres_a = all_genres(movies_a)
+    genres_b = all_genres(movies_b)
+    return genres_a - genres_b
 
 
 
