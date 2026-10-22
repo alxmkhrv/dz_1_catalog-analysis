@@ -186,7 +186,7 @@ def build_report(movies):
     print("Топ-3 фильма:")
     movies_by_title = {movie["title"]: movie for movie in movies}
     for title, _ in top_n_by_rating(movies):
-        print(f"   {format_report_line(movies_by_title[title])}")
+        print(f"  {format_report_line(movies_by_title[title])}")
     print()
 
     print("Фильмов по жанрам:")
